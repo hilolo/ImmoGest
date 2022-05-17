@@ -1,14 +1,14 @@
 using System;
 using System.Threading.Tasks;
-using Boilerplate.Api.Extensions;
-using Boilerplate.Infrastructure.Context;
+using ImmoGest.Api.Extensions;
+using ImmoGest.Infrastructure.Context;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Serilog;
 
-namespace Boilerplate.Api
+namespace ImmoGest.Api
 {
     public static class Program
     {

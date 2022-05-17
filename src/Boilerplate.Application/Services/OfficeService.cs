@@ -1,17 +1,17 @@
 ﻿using AutoMapper;
-using Boilerplate.Application.DTOs;
-using Boilerplate.Application.DTOs.Office;
-using Boilerplate.Application.Filters;
-using Boilerplate.Application.Interfaces;
-using Boilerplate.Domain.Entities;
-using Boilerplate.Domain.Repositories;
+using ImmoGest.Application.DTOs;
+using ImmoGest.Application.DTOs.Office;
+using ImmoGest.Application.Filters;
+using ImmoGest.Application.Interfaces;
+using ImmoGest.Domain.Entities;
+using ImmoGest.Domain.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Boilerplate.Application.Services
+namespace ImmoGest.Application.Services
 {
 
     public class OfficeService : IOfficeService
@@ -58,9 +58,9 @@ namespace Boilerplate.Application.Services
         public async  Task<PaginatedList<GetOfficeDTO>> GetAllOfficees(GetOfficeFilter filter)
         {
 
-            var offices = _officeRepository
-                .GetAll();
-                
+            var offices = _officeRepository.GetAllFilter<GetOfficeFilter>(filter);
+
+
             return await _mapper.ProjectTo<GetOfficeDTO>(offices).ToPaginatedListAsync(filter.CurrentPage, filter.PageSize);
         }
 

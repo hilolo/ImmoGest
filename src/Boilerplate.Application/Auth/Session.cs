@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Http;
 using System;
 using System.Security.Claims;
-using ISession = Boilerplate.Domain.Auth.Interfaces.ISession;
+using ISession = ImmoGest.Domain.Auth.Interfaces.ISession;
 
-namespace Boilerplate.Application.Auth
+namespace ImmoGest.Application.Auth
 {
     public class Session : ISession
     {

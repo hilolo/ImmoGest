@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Boilerplate.Api.Extensions
+namespace ImmoGest.Api.Extensions
 {
     public static class CompressionExtension
     {

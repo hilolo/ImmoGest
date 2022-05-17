@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Net;
 using System.Threading.Tasks;
-using Boilerplate.Api.IntegrationTests.Helpers;
-using Boilerplate.Application.DTOs;
-using Boilerplate.Application.DTOs.Hero;
+using ImmoGest.Api.IntegrationTests.Helpers;
+using ImmoGest.Application.DTOs;
+using ImmoGest.Application.DTOs.Hero;
 using FluentAssertions;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Xunit;
 
-namespace Boilerplate.Api.IntegrationTests
+namespace ImmoGest.Api.IntegrationTests
 {
     public class HeroControllerTests : IntegrationTest
     {

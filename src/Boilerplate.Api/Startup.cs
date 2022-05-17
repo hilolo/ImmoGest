@@ -1,11 +1,11 @@
 using System.Text;
 using System.Text.Json.Serialization;
-using Boilerplate.Api.Extensions;
-using Boilerplate.Application.DTOs;
-using Boilerplate.Application.Interfaces;
-using Boilerplate.Application.Services;
-using Boilerplate.Domain.Repositories;
-using Boilerplate.Infrastructure.Repositories;
+using ImmoGest.Api.Extensions;
+using ImmoGest.Application.DTOs;
+using ImmoGest.Application.Interfaces;
+using ImmoGest.Application.Services;
+using ImmoGest.Domain.Repositories;
+using ImmoGest.Infrastructure.Repositories;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -13,10 +13,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
-using Boilerplate.Application.Auth;
-using Boilerplate.Domain.Auth.Interfaces;
+using ImmoGest.Application.Auth;
+using ImmoGest.Domain.Auth.Interfaces;
 
-namespace Boilerplate.Api
+namespace ImmoGest.Api
 {
     public class Startup
     {
@@ -38,11 +38,14 @@ namespace Boilerplate.Api
             //DI Services and Repos
             services.AddScoped<IHeroRepository, HeroRepository>();
             services.AddScoped<IOfficeRepository, OfficeRepository>();
-            services.AddScoped<IHeroService, HeroService>();
-            services.AddScoped<IOfficeService, OfficeService>();
             services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IClientRepository, ClientRepository>();
+
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IAuthService, AuthService>();
+            services.AddScoped<IHeroService, HeroService>();
+            services.AddScoped<IOfficeService, OfficeService>();
+            services.AddScoped<IClientService, ClientService>();
             services.AddScoped<ISession, Session>();
 
             // WebApi Configuration

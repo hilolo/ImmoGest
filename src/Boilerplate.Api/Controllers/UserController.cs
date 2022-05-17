@@ -1,17 +1,17 @@
 ﻿using System;
 using System.Threading.Tasks;
-using Boilerplate.Application.DTOs;
-using Boilerplate.Application.DTOs.Auth;
-using Boilerplate.Application.DTOs.User;
-using Boilerplate.Application.Filters;
-using Boilerplate.Application.Interfaces;
-using Boilerplate.Domain.Auth;
+using ImmoGest.Application.DTOs;
+using ImmoGest.Application.DTOs.Auth;
+using ImmoGest.Application.DTOs.User;
+using ImmoGest.Application.Filters;
+using ImmoGest.Application.Interfaces;
+using ImmoGest.Domain.Auth;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using ISession = Boilerplate.Domain.Auth.Interfaces.ISession;
+using ISession = ImmoGest.Domain.Auth.Interfaces.ISession;
 
-namespace Boilerplate.Api.Controllers
+namespace ImmoGest.Api.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]

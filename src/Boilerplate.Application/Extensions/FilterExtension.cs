@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Linq.Expressions;
 
-namespace Boilerplate.Application.Extensions
+namespace ImmoGest.Application.Extensions
 {
     public static class FilterExtension
     {

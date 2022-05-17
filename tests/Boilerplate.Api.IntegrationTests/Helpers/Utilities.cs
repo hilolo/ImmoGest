@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Boilerplate.Domain.Entities;
-using Boilerplate.Domain.Entities.Enums;
-using Boilerplate.Infrastructure.Context;
+using ImmoGest.Domain.Entities;
+using ImmoGest.Domain.Entities.Enums;
+using ImmoGest.Infrastructure.Context;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.EntityFrameworkCore;
@@ -11,7 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using BC = BCrypt.Net.BCrypt;
 
-namespace Boilerplate.Api.IntegrationTests.Helpers
+namespace ImmoGest.Api.IntegrationTests.Helpers
 {
     public static class Utilities
     {

@@ -38,9 +38,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Boilerplate.Application\Boilerplate.Application.csproj" />
-    <ProjectReference Include="..\Boilerplate.Domain\Boilerplate.Domain.csproj" />
-    <ProjectReference Include="..\Boilerplate.Infrastructure\Boilerplate.Infrastructure.csproj" />
+    <ProjectReference Include="..\Boilerplate.Application\ImmoGest.Application.csproj" />
+    <ProjectReference Include="..\Boilerplate.Domain\ImmoGest.Domain.csproj" />
+    <ProjectReference Include="..\Boilerplate.Infrastructure\ImmoGest.Infrastructure.csproj" />
   </ItemGroup>
 
 

@@ -1,14 +1,14 @@
-﻿using Boilerplate.Application.DTOs;
-using Boilerplate.Application.DTOs.Office;
-using Boilerplate.Application.Filters;
-using Boilerplate.Application.Interfaces;
+﻿using ImmoGest.Application.DTOs;
+using ImmoGest.Application.DTOs.Office;
+using ImmoGest.Application.Filters;
+using ImmoGest.Application.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Threading.Tasks;
 
-namespace Boilerplate.Api.Controllers
+namespace ImmoGest.Api.Controllers
 {
   
         [ApiController]
@@ -35,6 +35,7 @@ namespace Boilerplate.Api.Controllers
         public async Task<ActionResult<PaginatedList<GetOfficeDTO>>> GetOffices([FromQuery] GetOfficeFilter filter)
             {
                 return Ok(await _officeService.GetAllOfficees(filter));
+
             }
 
 

@@ -1,8 +1,8 @@
-﻿using Boilerplate.Domain.Entities;
-using Boilerplate.Infrastructure.Configuration;
+﻿using ImmoGest.Domain.Entities;
+using ImmoGest.Infrastructure.Configuration;
 using Microsoft.EntityFrameworkCore;
 
-namespace Boilerplate.Infrastructure.Context
+namespace ImmoGest.Infrastructure.Context
 {
     public class ApplicationDbContext : DbContext
     {
@@ -11,11 +11,11 @@ namespace Boilerplate.Infrastructure.Context
         public DbSet<Office> Offices { get; set; }
         public DbSet<Hero> Heroes { get; set; }
         public DbSet<User> Users { get; set; }
-
-
+        public DbSet<Client> Clients { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.ApplyConfiguration(new OfficeConfiguration());
             modelBuilder.ApplyConfiguration(new UserConfiguration());
         }
     }

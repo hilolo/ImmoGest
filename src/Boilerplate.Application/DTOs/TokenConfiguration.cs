@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Boilerplate.Application.DTOs
+namespace ImmoGest.Application.DTOs
 {
     public class TokenConfiguration
     {

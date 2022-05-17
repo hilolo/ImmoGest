@@ -1,12 +1,12 @@
-﻿using Boilerplate.Domain.Entities;
+﻿using ImmoGest.Domain.Entities;
 using System;
 using System.Threading.Tasks;
-using Boilerplate.Application.DTOs;
-using Boilerplate.Application.DTOs.User;
-using Boilerplate.Application.Filters;
+using ImmoGest.Application.DTOs;
+using ImmoGest.Application.DTOs.User;
+using ImmoGest.Application.Filters;
 
 
-namespace Boilerplate.Application.Interfaces
+namespace ImmoGest.Application.Interfaces
 {
     public interface IUserService : IDisposable
     {

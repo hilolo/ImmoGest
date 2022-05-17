@@ -1,8 +1,8 @@
-using Boilerplate.Api.IntegrationTests.Helpers;
+using ImmoGest.Api.IntegrationTests.Helpers;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Xunit;
 
-namespace Boilerplate.Api.IntegrationTests
+namespace ImmoGest.Api.IntegrationTests
 {
     public abstract class IntegrationTest: IClassFixture<WebApplicationFactoryFixture>
     {

@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Threading.Tasks;
-using Boilerplate.Application.DTOs;
-using Boilerplate.Application.DTOs.Hero;
-using Boilerplate.Application.Filters;
-using Boilerplate.Application.Interfaces;
+using ImmoGest.Application.DTOs;
+using ImmoGest.Application.DTOs.Hero;
+using ImmoGest.Application.Filters;
+using ImmoGest.Application.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Boilerplate.Api.Controllers
+namespace ImmoGest.Api.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]

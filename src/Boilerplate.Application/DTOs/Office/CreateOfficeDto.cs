@@ -1,4 +1,4 @@
-﻿using Boilerplate.Domain.Entities.Enums;
+﻿using ImmoGest.Domain.Entities.Enums;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Boilerplate.Application.DTOs.Office
+namespace ImmoGest.Application.DTOs.Office
 {
     public class  CreateOfficeDto
     {

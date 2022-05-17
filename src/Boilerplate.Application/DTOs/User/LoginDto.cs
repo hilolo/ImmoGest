@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Boilerplate.Application.DTOs.User
+namespace ImmoGest.Application.DTOs.User
 {
     public class LoginDto
     {

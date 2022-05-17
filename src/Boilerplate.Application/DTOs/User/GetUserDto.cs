@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Boilerplate.Application.DTOs.User
+namespace ImmoGest.Application.DTOs.User
 {
     public class GetUserDto
     {

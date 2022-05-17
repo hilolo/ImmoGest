@@ -1,13 +1,16 @@
-﻿using System;
+﻿using ImmoGest.Domain.Core.Entities;
+using System;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Boilerplate.Domain.Core.Interfaces
+namespace ImmoGest.Domain.Core.Interfaces
 {
     public interface IRepository<TEntity> : IDisposable where TEntity : class
     {
-        IQueryable<TEntity> GetAll();
+        IQueryable<TEntity> GetAllFilter<IFilter>(IFilter filterOption) where IFilter : FilterOption;
 
+
+        IQueryable<TEntity> GetAll();
         Task<TEntity> GetById(Guid id);
 
         TEntity Create(TEntity entity);

@@ -8,7 +8,7 @@ using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.Filters;
 using Swashbuckle.AspNetCore.SwaggerUI;
 
-namespace Boilerplate.Api.Extensions
+namespace ImmoGest.Api.Extensions
 {
     public static class SwaggerExtension
     {
@@ -19,18 +19,18 @@ namespace Boilerplate.Api.Extensions
                 c.SwaggerDoc("v1",
                     new OpenApiInfo
                     {
-                        Title = "Boilerplate.Api",
+                        Title = "ImmoGest",
                         Version = "v1",
-                        Description = "API Boilerplate",
+                        Description = "ImmoGest",
                         Contact = new OpenApiContact
                         {
-                            Name = "Yan Pitangui",
-                            Url = new Uri("https://github.com/yanpitangui")
+                            Name = "Mehdi",
+                            Url = new Uri("https://github.com/hilolo")
                         },
                         License = new OpenApiLicense
                         {
                             Name = "MIT",
-                            Url = new Uri("https://github.com/yanpitangui/dotnet-api-boilerplate/blob/main/LICENSE")
+                            Url = new Uri("https://github.com/hilolo")
                         }
                     });
                 c.DescribeAllParametersInCamelCase();

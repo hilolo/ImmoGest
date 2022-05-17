@@ -1,4 +1,4 @@
-﻿namespace Boilerplate.Domain.Auth
+﻿namespace ImmoGest.Domain.Auth
 {
     public static class Roles
     {

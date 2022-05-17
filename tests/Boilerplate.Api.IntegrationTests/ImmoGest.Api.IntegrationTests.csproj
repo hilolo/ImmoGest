@@ -28,7 +28,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Boilerplate.Api\Boilerplate.Api.csproj" />
+    <ProjectReference Include="..\..\src\ImmoGest.Api\ImmoGest.Api.csproj" />
   </ItemGroup>
 
 </Project>

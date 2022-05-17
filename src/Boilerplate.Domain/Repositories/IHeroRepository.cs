@@ -1,7 +1,7 @@
-﻿using Boilerplate.Domain.Core.Interfaces;
-using Boilerplate.Domain.Entities;
+﻿using ImmoGest.Domain.Core.Interfaces;
+using ImmoGest.Domain.Entities;
 
-namespace Boilerplate.Domain.Repositories
+namespace ImmoGest.Domain.Repositories
 {
     public interface IHeroRepository : IRepository<Hero>
     {}

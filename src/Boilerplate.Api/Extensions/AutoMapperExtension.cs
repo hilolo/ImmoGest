@@ -1,9 +1,9 @@
 ﻿using System;
 using AutoMapper;
-using Boilerplate.Application.MappingProfiles;
+using ImmoGest.Application.MappingProfiles;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Boilerplate.Api.Extensions
+namespace ImmoGest.Api.Extensions
 {
     public static class AutoMapperExtension
     {

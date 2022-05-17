@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using Boilerplate.Domain.Core.Entities;
-using Boilerplate.Domain.Entities.Enums;
+using ImmoGest.Domain.Core.Entities;
+using ImmoGest.Domain.Entities.Enums;
 
-namespace Boilerplate.Domain.Entities
+namespace ImmoGest.Domain.Entities
 {
     public class Hero : Entity
     {
@@ -17,5 +17,7 @@ namespace Boilerplate.Domain.Entities
         public HeroType? HeroType { get; set; }
 
         public string Team { get; set; }
+        public override void BuildSearchTerms()
+          => SearchTerms = $"D".ToLower();
     }
 }

@@ -2,16 +2,16 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
-using Boilerplate.Application.DTOs;
-using Boilerplate.Application.DTOs.Hero;
-using Boilerplate.Application.Extensions;
-using Boilerplate.Application.Filters;
-using Boilerplate.Application.Interfaces;
-using Boilerplate.Domain.Entities;
-using Boilerplate.Domain.Repositories;
+using ImmoGest.Application.DTOs;
+using ImmoGest.Application.DTOs.Hero;
+using ImmoGest.Application.Extensions;
+using ImmoGest.Application.Filters;
+using ImmoGest.Application.Interfaces;
+using ImmoGest.Domain.Entities;
+using ImmoGest.Domain.Repositories;
 using Microsoft.EntityFrameworkCore;
 
-namespace Boilerplate.Application.Services
+namespace ImmoGest.Application.Services
 {
     public class HeroService : IHeroService
     {
@@ -49,6 +49,7 @@ namespace Boilerplate.Application.Services
                 .WhereIf(filter.HeroType != null, x => x.HeroType == filter.HeroType)
                 .WhereIf(!string.IsNullOrEmpty(filter.Team), x => x.Team == filter.Team)
                 .WhereIf(!string.IsNullOrEmpty(filter.Individuality), x => EF.Functions.Like(x.Individuality, $"%{filter.Individuality}%"));
+            
             return await _mapper.ProjectTo<GetHeroDto>(heroes).ToPaginatedListAsync(filter.CurrentPage, filter.PageSize);
         }
 

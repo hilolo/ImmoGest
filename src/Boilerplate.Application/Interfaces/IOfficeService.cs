@@ -1,13 +1,13 @@
-﻿using Boilerplate.Application.DTOs;
-using Boilerplate.Application.DTOs.Office;
-using Boilerplate.Application.Filters;
+﻿using ImmoGest.Application.DTOs;
+using ImmoGest.Application.DTOs.Office;
+using ImmoGest.Application.Filters;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Boilerplate.Application.Interfaces
+namespace ImmoGest.Application.Interfaces
 {
   
     public interface IOfficeService : IDisposable

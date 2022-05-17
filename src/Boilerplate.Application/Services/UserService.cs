@@ -1,19 +1,20 @@
 ﻿using System;
+using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
-using Boilerplate.Application.DTOs;
-using Boilerplate.Application.DTOs.User;
-using Boilerplate.Application.Extensions;
-using Boilerplate.Application.Filters;
-using Boilerplate.Application.Interfaces;
-using Boilerplate.Domain.Auth;
-using Boilerplate.Domain.Entities;
-using Boilerplate.Domain.Repositories;
+using ImmoGest.Application.DTOs;
+using ImmoGest.Application.DTOs.User;
+using ImmoGest.Application.Extensions;
+using ImmoGest.Application.Filters;
+using ImmoGest.Application.Interfaces;
+using ImmoGest.Domain.Auth;
+using ImmoGest.Domain.Entities;
+using ImmoGest.Domain.Repositories;
 using Microsoft.EntityFrameworkCore;
 using BC = BCrypt.Net.BCrypt;
 
 
-namespace Boilerplate.Application.Services
+namespace ImmoGest.Application.Services
 {
     public class UserService : IUserService
     {
@@ -82,7 +83,8 @@ namespace Boilerplate.Application.Services
             var users = _userRepository
                 .GetAll()
                 .WhereIf(!string.IsNullOrEmpty(filter.Email), x => EF.Functions.Like(x.Email, $"%{filter.Email}%"))
-                .WhereIf(filter.IsAdmin, x => x.Role == Roles.Admin);
+                .WhereIf(filter.IsAdmin, x => x.Role == Roles.Admin)
+                .Where(x => x.OfficeId == filter.OfficeId);
             return await _mapper.ProjectTo<GetUserDto>(users).ToPaginatedListAsync(filter.CurrentPage, filter.PageSize);
         }
 

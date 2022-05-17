@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Linq;
 using System.Threading.Tasks;
-using Boilerplate.Domain.Core.Entities;
-using Boilerplate.Domain.Core.Interfaces;
-using Boilerplate.Infrastructure.Context;
+using ImmoGest.Domain.Core.Entities;
+using ImmoGest.Domain.Core.Interfaces;
+using ImmoGest.Infrastructure.Context;
 using Microsoft.EntityFrameworkCore;
 
-namespace Boilerplate.Infrastructure.Repositories
+namespace ImmoGest.Infrastructure.Repositories
 {
     public class Repository<TEntity> : IRepository<TEntity> where TEntity : Entity
     {
@@ -21,9 +21,16 @@ namespace Boilerplate.Infrastructure.Repositories
         protected DbSet<TEntity> DbSet { get; }
 
         public virtual IQueryable<TEntity> GetAll()
-        {
+        { 
+
             return DbSet.AsNoTracking();
         }
+        public virtual IQueryable<TEntity> GetAllFilter<IFilter>(IFilter filterOption) where IFilter : FilterOption
+            => (!string.IsNullOrEmpty(filterOption.SearchQuery)) ? 
+            DbSet.AsNoTracking().Where(e => e.SearchTerms.Contains(filterOption.SearchQuery)) :
+             DbSet.AsNoTracking();
+        
+
 
         public virtual async Task<TEntity> GetById(Guid id)
         {
@@ -66,5 +73,6 @@ namespace Boilerplate.Infrastructure.Repositories
         {
             if (disposing) Db.Dispose();
         }
+
     }
 }

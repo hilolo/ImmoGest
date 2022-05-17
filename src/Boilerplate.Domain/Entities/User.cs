@@ -1,8 +1,8 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
-using Boilerplate.Domain.Core.Entities;
+using ImmoGest.Domain.Core.Entities;
 
-namespace Boilerplate.Domain.Entities
+namespace ImmoGest.Domain.Entities
 {
     public class User : Entity
     {
@@ -15,6 +15,11 @@ namespace Boilerplate.Domain.Entities
         public string Role { get; set; }
         public Guid OfficeId { get; set; }
         public Office Office { get; set; }
+
+        public override void BuildSearchTerms()
+           => SearchTerms = $"D".ToLower();
+
+
     }
 }
 

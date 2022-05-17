@@ -1,7 +1,7 @@
-﻿using Boilerplate.Application.DTOs.Auth;
-using Boilerplate.Domain.Entities;
+﻿using ImmoGest.Application.DTOs.Auth;
+using ImmoGest.Domain.Entities;
 
-namespace Boilerplate.Application.Interfaces
+namespace ImmoGest.Application.Interfaces
 {
     public interface IAuthService
     {

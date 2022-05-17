@@ -1,8 +1,12 @@
-﻿namespace Boilerplate.Application.Filters
+﻿using ImmoGest.Domain.Core.Entities;
+using System;
+
+namespace ImmoGest.Application.Filters
 {
-    public class GetUsersFilter : PaginationInfoFilter
+    public class GetUsersFilter : FilterOption
     {
         public string Email { get; set; }
         public bool IsAdmin { get; set; }
+        public Guid OfficeId { get; set; }
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace Boilerplate.Domain.Entities.Enums
+﻿namespace ImmoGest.Domain.Entities.Enums
 {
     public enum HeroType
     {

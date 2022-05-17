@@ -2,10 +2,10 @@
 using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
-using Boilerplate.Application.DTOs.User;
+using ImmoGest.Application.DTOs.User;
 using Newtonsoft.Json;
 
-namespace Boilerplate.Api.IntegrationTests.Helpers
+namespace ImmoGest.Api.IntegrationTests.Helpers
 {
     public static class HttpHelper
     {

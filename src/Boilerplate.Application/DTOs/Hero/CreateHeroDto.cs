@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using Boilerplate.Domain.Entities.Enums;
+using ImmoGest.Domain.Entities.Enums;
 
-namespace Boilerplate.Application.DTOs.Hero
+namespace ImmoGest.Application.DTOs.Hero
 {
     public class CreateHeroDto
     {

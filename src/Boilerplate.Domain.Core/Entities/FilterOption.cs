@@ -4,12 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Boilerplate.Application.Filters
+namespace ImmoGest.Domain.Core.Entities
 {
-    public abstract class PaginationInfoFilter
+    public abstract class FilterOption
     {
         public int CurrentPage { get; set; } = 1;
-
         public int PageSize { get; set; } = 10;
+        public string SearchQuery { get; set; }
     }
 }
+
+

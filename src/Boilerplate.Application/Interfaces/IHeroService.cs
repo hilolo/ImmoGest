@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Boilerplate.Application.DTOs;
-using Boilerplate.Application.DTOs.Hero;
-using Boilerplate.Application.Filters;
+using ImmoGest.Application.DTOs;
+using ImmoGest.Application.DTOs.Hero;
+using ImmoGest.Application.Filters;
 
-namespace Boilerplate.Application.Interfaces
+namespace ImmoGest.Application.Interfaces
 {
     public interface IHeroService : IDisposable
     {

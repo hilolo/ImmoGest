@@ -1,10 +1,10 @@
-﻿using Boilerplate.Infrastructure.Context;
+﻿using ImmoGest.Infrastructure.Context;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Boilerplate.Api.Extensions
+namespace ImmoGest.Api.Extensions
 {
     public static class DatabaseExtension
     {

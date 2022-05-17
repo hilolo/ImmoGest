@@ -2,14 +2,14 @@
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
-using Boilerplate.Application.DTOs;
-using Boilerplate.Application.DTOs.Auth;
-using Boilerplate.Application.Interfaces;
-using Boilerplate.Domain.Entities;
+using ImmoGest.Application.DTOs;
+using ImmoGest.Application.DTOs.Auth;
+using ImmoGest.Application.Interfaces;
+using ImmoGest.Domain.Entities;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 
-namespace Boilerplate.Application.Services
+namespace ImmoGest.Application.Services
 {
     public class AuthService : IAuthService
     {

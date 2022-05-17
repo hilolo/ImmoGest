@@ -1,10 +1,10 @@
-﻿using Boilerplate.Api.IntegrationTests.Helpers;
-using Boilerplate.Infrastructure.Context;
+﻿using ImmoGest.Api.IntegrationTests.Helpers;
+using ImmoGest.Infrastructure.Context;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 
-namespace Boilerplate.Api.IntegrationTests
+namespace ImmoGest.Api.IntegrationTests
 {
     public class WebApplicationFactoryFixture : IDisposable
     {

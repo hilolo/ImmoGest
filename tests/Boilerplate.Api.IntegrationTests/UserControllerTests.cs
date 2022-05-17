@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Net;
 using System.Threading.Tasks;
-using Boilerplate.Api.IntegrationTests.Helpers;
-using Boilerplate.Application.DTOs;
-using Boilerplate.Application.DTOs.Auth;
-using Boilerplate.Application.DTOs.User;
+using ImmoGest.Api.IntegrationTests.Helpers;
+using ImmoGest.Application.DTOs;
+using ImmoGest.Application.DTOs.Auth;
+using ImmoGest.Application.DTOs.User;
 using FluentAssertions;
 using Newtonsoft.Json;
 using Xunit;
 
-namespace Boilerplate.Api.IntegrationTests
+namespace ImmoGest.Api.IntegrationTests
 {
     public class UserControllerTests : IntegrationTest, IAsyncLifetime
     {

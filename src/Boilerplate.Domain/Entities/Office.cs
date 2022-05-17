@@ -1,5 +1,5 @@
-﻿using Boilerplate.Domain.Core.Entities;
-using Boilerplate.Domain.Entities.Enums;
+﻿using ImmoGest.Domain.Core.Entities;
+using ImmoGest.Domain.Entities.Enums;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Boilerplate.Domain.Entities
+namespace ImmoGest.Domain.Entities
 {
  
     public class Office : Entity
@@ -20,6 +20,8 @@ namespace Boilerplate.Domain.Entities
         public string RC { get; set; }
         public string Adresse { get; set; }
         public string City { get; set; }
+        public override void BuildSearchTerms()
+          => SearchTerms = $"D".ToLower();
 
     }
 }

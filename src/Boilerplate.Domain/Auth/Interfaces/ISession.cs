@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Boilerplate.Domain.Auth.Interfaces
+namespace ImmoGest.Domain.Auth.Interfaces
 {
     public interface ISession
     {

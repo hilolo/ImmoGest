@@ -1,11 +1,12 @@
 ﻿using AutoMapper;
-using Boilerplate.Application.DTOs.Hero;
-using Boilerplate.Application.DTOs.Office;
-using Boilerplate.Application.DTOs.User;
-using Boilerplate.Domain.Auth;
-using Boilerplate.Domain.Entities;
+using ImmoGest.Application.DTOs.Client;
+using ImmoGest.Application.DTOs.Hero;
+using ImmoGest.Application.DTOs.Office;
+using ImmoGest.Application.DTOs.User;
+using ImmoGest.Domain.Auth;
+using ImmoGest.Domain.Entities;
 
-namespace Boilerplate.Application.MappingProfiles
+namespace ImmoGest.Application.MappingProfiles
 {
     public class MappingProfile : Profile
     {
@@ -20,6 +21,13 @@ namespace Boilerplate.Application.MappingProfiles
             CreateMap<Office, GetOfficeDTO>().ReverseMap();
             CreateMap<CreateOfficeDto, Office>();
             CreateMap<UpdateOfficeDTO, Office>();
+
+
+            // Client
+            CreateMap<Client, GetClientDTO>().ReverseMap();
+            CreateMap<CreateClientDto, Client>();
+            CreateMap<UpdateClientDTO, Client>();
+
 
 
             // User Map
