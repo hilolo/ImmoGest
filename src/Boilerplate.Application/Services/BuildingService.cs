@@ -59,6 +59,13 @@ namespace ImmoGest.Application.Services
         public async Task<GetBuildingDTO> CreateBuilding(CreateBuildingDto _Building)
         {
             var created = _BuildingRepository.Create(_mapper.Map<Building>(_Building));
+
+            foreach (var Property in _Building.Propertys)
+            {
+                Property.OfficeId = created.Id;
+                Property.Adresse = $"{created.Adresse} {created.Name}";
+                Property.Identifier = $"{created.Name} {Property.Identifier}"; ;
+            }
             await _BuildingRepository.SaveChangesAsync();
             return _mapper.Map<GetBuildingDTO>(created);
         }

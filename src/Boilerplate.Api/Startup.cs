@@ -32,6 +32,7 @@ namespace ImmoGest.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
             //Extension method for less clutter in startup
             services.AddApplicationDbContext(Configuration);
 
@@ -94,6 +95,7 @@ namespace ImmoGest.Api
             // GZip compression
             services.AddCompression();
 
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -106,6 +108,14 @@ namespace ImmoGest.Api
 
             app.UseAuthentication();
             app.UseAuthorization();
+            app.UseCors(builder =>
+            {
+                builder
+                    .AllowAnyHeader()
+                    .AllowAnyMethod()
+                    .SetIsOriginAllowed(_ => true)
+                    .AllowCredentials();
+            });
 
             app.UseEndpoints(endpoints =>
             {
@@ -119,6 +129,8 @@ namespace ImmoGest.Api
 
 
             app.UseResponseCompression();
+
+
         }
     }
 }

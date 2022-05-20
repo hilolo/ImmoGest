@@ -21,5 +21,6 @@ namespace ImmoGest.Application.DTOs.Property
         public string City { get; set; }
         public Guid OwnerId { get; set; }
         public Guid OfficeId { get; set; }
+        public Guid? BuildingId { get; set; }
     }
 }

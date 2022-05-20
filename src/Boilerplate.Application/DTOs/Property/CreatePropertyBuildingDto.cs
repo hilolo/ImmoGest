@@ -1,16 +1,18 @@
 ﻿using ImmoGest.Domain.Entities.Enums;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace ImmoGest.Application.DTOs.Property
 {
-    public class GetPropertyDTO
+    public class CreatePropertyBuildingDto
     {
-        public Guid Id { get; set; }
+        [Required(ErrorMessage = " Identifier is required")]
         public string Identifier { get; set; }
+        [Required(ErrorMessage = " Type Property is required")]
         public TypeProperty TypeProperty { get; set; }
         public TypeRental TypeRental { get; set; }
         public string Adresse { get; set; }
