@@ -12,8 +12,8 @@ namespace ImmoGest.Application.DTOs.Building
     public class CreateBuildingDto
     {
         [Required(ErrorMessage = "Name is required")]
-        public TypeProperty TypeProperty { get; set; }
         public string Name { get; set; }
+        public TypeProperty TypeProperty { get; set; }
         public string Adresse { get; set; }
         public string City { get; set; }
         public Guid OwnerId { get; set; }

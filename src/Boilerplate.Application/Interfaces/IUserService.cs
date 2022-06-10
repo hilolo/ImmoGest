@@ -15,7 +15,10 @@ namespace ImmoGest.Application.Interfaces
         Task<GetUserDto> CreateUser(CreateUserDto dto);
         Task<bool> DeleteUser(Guid id);
         Task<GetUserDto> UpdatePassword(Guid id, UpdatePasswordDto dto);
+
+        Task<GetUserDto> UpdateUser(Guid id, UpdateUserDto dto);
         Task<PaginatedList<GetUserDto>> GetAllUsers(GetUsersFilter filter);
         Task<GetUserDto> GetUserById(Guid id);
+        
     }
 }

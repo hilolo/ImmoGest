@@ -41,12 +41,20 @@ namespace ImmoGest.Api
             services.AddScoped<IOfficeRepository, OfficeRepository>();
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IClientRepository, ClientRepository>();
+            services.AddScoped<IBuildingRepository, BuildingRepository>();
+            services.AddScoped<IPropertyRepository, PropertyRepository>();
+            services.AddScoped<IRentalRepository, RentalRepository>();
+
 
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IAuthService, AuthService>();
             services.AddScoped<IHeroService, HeroService>();
             services.AddScoped<IOfficeService, OfficeService>();
             services.AddScoped<IClientService, ClientService>();
+            services.AddScoped<IBuildingService, BuildingService>();
+            services.AddScoped<IPropertyService, PropertyService>();
+            services.AddScoped<IRentalService, RentalService>();
+
             services.AddScoped<ISession, Session>();
 
             // WebApi Configuration

@@ -37,7 +37,8 @@ namespace ImmoGest.Application.Services
                 new Claim(ClaimTypes.Email, user.Email),
                 new Claim(ClaimTypes.Role, user.Role),
                  new Claim("officeId", user.OfficeId.ToString()),
-                   new Claim("expires", expDate.ToString())
+                   new Claim("expires", expDate.ToString()),
+                     new Claim("plan","basic")
             }); ;
 
      

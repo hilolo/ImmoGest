@@ -83,14 +83,28 @@ namespace ImmoGest.Application.Services
             var users = _userRepository
                 .GetAll()
                 .WhereIf(!string.IsNullOrEmpty(filter.Email), x => EF.Functions.Like(x.Email, $"%{filter.Email}%"))
-                .WhereIf(filter.IsAdmin, x => x.Role == Roles.Admin)
                 .Where(x => x.OfficeId == filter.OfficeId);
             return await _mapper.ProjectTo<GetUserDto>(users).ToPaginatedListAsync(filter.CurrentPage, filter.PageSize);
         }
 
         public async Task<GetUserDto> GetUserById(Guid id)
         {
-            return _mapper.Map<GetUserDto>(await _userRepository.GetById(id));
+
+            return _mapper.Map<GetUserDto>(await _userRepository.GetByIdCompany(id));
+        }
+
+        public async Task<GetUserDto> UpdateUser(Guid id, UpdateUserDto dto)
+        {
+            var originalUser = await _userRepository.GetById(id);
+            if (originalUser == null) return null;
+
+            originalUser.Phone = dto.Phone;
+            originalUser.Name = dto.Name;
+
+            _userRepository.Update(originalUser);
+            await _userRepository.SaveChangesAsync();
+            return _mapper.Map<GetUserDto>(originalUser);
+
         }
     }
 }

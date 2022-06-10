@@ -13,6 +13,10 @@ namespace ImmoGest.Domain.Entities
 
         [Required]
         public string Role { get; set; }
+
+        public string Avatar { get; set; }
+        public string Name { get; set; }
+        public string Phone { get; set; }                 
         public Guid OfficeId { get; set; }
         public Office Office { get; set; }
 

@@ -19,7 +19,7 @@ namespace ImmoGest.Infrastructure.Migrations
                 .HasAnnotation("ProductVersion", "6.0.1")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
-            modelBuilder.Entity("Boilerplate.Domain.Entities.Client", b =>
+            modelBuilder.Entity("ImmoGest.Domain.Entities.Client", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -66,7 +66,7 @@ namespace ImmoGest.Infrastructure.Migrations
                     b.ToTable("Clients");
                 });
 
-            modelBuilder.Entity("Boilerplate.Domain.Entities.Hero", b =>
+            modelBuilder.Entity("ImmoGest.Domain.Entities.Hero", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -99,7 +99,7 @@ namespace ImmoGest.Infrastructure.Migrations
                     b.ToTable("Heroes");
                 });
 
-            modelBuilder.Entity("Boilerplate.Domain.Entities.Office", b =>
+            modelBuilder.Entity("ImmoGest.Domain.Entities.Office", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -142,22 +142,31 @@ namespace ImmoGest.Infrastructure.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Boilerplate.Domain.Entities.User", b =>
+            modelBuilder.Entity("ImmoGest.Domain.Entities.User", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("char(36)");
+
+                    b.Property<string>("Avatar")
+                        .HasColumnType("longtext");
 
                     b.Property<string>("Email")
                         .IsRequired()
                         .HasMaxLength(254)
                         .HasColumnType("varchar(254)");
 
+                    b.Property<string>("Name")
+                        .HasColumnType("longtext");
+
                     b.Property<Guid>("OfficeId")
                         .HasColumnType("char(36)");
 
                     b.Property<string>("Password")
                         .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Phone")
                         .HasColumnType("longtext");
 
                     b.Property<string>("Role")
@@ -182,7 +191,7 @@ namespace ImmoGest.Infrastructure.Migrations
                             Id = new Guid("687d9fd5-2752-4a96-93d5-0f33a49913c1"),
                             Email = "admin@admin.com",
                             OfficeId = new Guid("687d9fd5-2752-4a96-93d5-0f33a49913c6"),
-                            Password = "$2a$11$YJfzSFbrOuoqTeluna7bnuSD2nrXTPx1oaVbVviZGpJf86zzyaG5e",
+                            Password = "$2a$11$lYNybCRZFMIkNDBbpnBkQ.ByGdmV21wRZP9criVIxeFh1cI6oMj0e",
                             Role = "Admin"
                         },
                         new
@@ -190,14 +199,14 @@ namespace ImmoGest.Infrastructure.Migrations
                             Id = new Guid("687d9fd5-2752-4a96-93d5-0f33a49913c2"),
                             Email = "user@boilerplate.com",
                             OfficeId = new Guid("687d9fd5-2752-4a96-93d5-0f33a49913c6"),
-                            Password = "$2a$11$Sq1zAic0OPFyPChL870htO8fL8F3cTzPsfoTYpU9Tzh1r/BjWEv6W",
+                            Password = "$2a$11$QfFqhQmH8hRTwh7RjNvn1u8hIF2ZpDt75.TTg6RwfnEEsq5/Gn2HW",
                             Role = "User"
                         });
                 });
 
-            modelBuilder.Entity("Boilerplate.Domain.Entities.Client", b =>
+            modelBuilder.Entity("ImmoGest.Domain.Entities.Client", b =>
                 {
-                    b.HasOne("Boilerplate.Domain.Entities.Office", "Office")
+                    b.HasOne("ImmoGest.Domain.Entities.Office", "Office")
                         .WithMany()
                         .HasForeignKey("OfficeId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -206,9 +215,9 @@ namespace ImmoGest.Infrastructure.Migrations
                     b.Navigation("Office");
                 });
 
-            modelBuilder.Entity("Boilerplate.Domain.Entities.User", b =>
+            modelBuilder.Entity("ImmoGest.Domain.Entities.User", b =>
                 {
-                    b.HasOne("Boilerplate.Domain.Entities.Office", "Office")
+                    b.HasOne("ImmoGest.Domain.Entities.Office", "Office")
                         .WithMany()
                         .HasForeignKey("OfficeId")
                         .OnDelete(DeleteBehavior.Cascade)

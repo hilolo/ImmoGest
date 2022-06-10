@@ -108,6 +108,12 @@ namespace ImmoGest.Infrastructure.Migrations
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Role = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
+                    Avatar = table.Column<string>(type: "longtext", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    Name = table.Column<string>(type: "longtext", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    Phone = table.Column<string>(type: "longtext", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
                     OfficeId = table.Column<Guid>(type: "char(36)", nullable: false, collation: "ascii_general_ci"),
                     SearchTerms = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4")
@@ -131,13 +137,13 @@ namespace ImmoGest.Infrastructure.Migrations
 
             migrationBuilder.InsertData(
                 table: "Users",
-                columns: new[] { "Id", "Email", "OfficeId", "Password", "Role", "SearchTerms" },
-                values: new object[] { new Guid("687d9fd5-2752-4a96-93d5-0f33a49913c1"), "admin@admin.com", new Guid("687d9fd5-2752-4a96-93d5-0f33a49913c6"), "$2a$11$YJfzSFbrOuoqTeluna7bnuSD2nrXTPx1oaVbVviZGpJf86zzyaG5e", "Admin", null });
+                columns: new[] { "Id", "Avatar", "Email", "Name", "OfficeId", "Password", "Phone", "Role", "SearchTerms" },
+                values: new object[] { new Guid("687d9fd5-2752-4a96-93d5-0f33a49913c1"), null, "admin@admin.com", null, new Guid("687d9fd5-2752-4a96-93d5-0f33a49913c6"), "$2a$11$lYNybCRZFMIkNDBbpnBkQ.ByGdmV21wRZP9criVIxeFh1cI6oMj0e", null, "Admin", null });
 
             migrationBuilder.InsertData(
                 table: "Users",
-                columns: new[] { "Id", "Email", "OfficeId", "Password", "Role", "SearchTerms" },
-                values: new object[] { new Guid("687d9fd5-2752-4a96-93d5-0f33a49913c2"), "user@boilerplate.com", new Guid("687d9fd5-2752-4a96-93d5-0f33a49913c6"), "$2a$11$Sq1zAic0OPFyPChL870htO8fL8F3cTzPsfoTYpU9Tzh1r/BjWEv6W", "User", null });
+                columns: new[] { "Id", "Avatar", "Email", "Name", "OfficeId", "Password", "Phone", "Role", "SearchTerms" },
+                values: new object[] { new Guid("687d9fd5-2752-4a96-93d5-0f33a49913c2"), null, "user@boilerplate.com", null, new Guid("687d9fd5-2752-4a96-93d5-0f33a49913c6"), "$2a$11$QfFqhQmH8hRTwh7RjNvn1u8hIF2ZpDt75.TTg6RwfnEEsq5/Gn2HW", null, "User", null });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Clients_OfficeId",

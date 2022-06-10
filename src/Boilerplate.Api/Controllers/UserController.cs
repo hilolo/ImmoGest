@@ -57,8 +57,8 @@ namespace ImmoGest.Api.Controllers
         /// <returns></returns>
         [ProducesResponseType(typeof(PaginatedList<GetUserDto>), StatusCodes.Status200OK)]
         [Authorize(Roles = Roles.Admin)]
-        [HttpGet]
-        public async Task<ActionResult<PaginatedList<GetUserDto>>> GetUsers([FromQuery] GetUsersFilter filter)
+        [HttpPost]
+        public async Task<ActionResult<PaginatedList<GetUserDto>>> GetUsers([FromBody] GetUsersFilter filter)
         {
             return Ok(await _userService.GetAllUsers(filter));
         }
@@ -82,19 +82,7 @@ namespace ImmoGest.Api.Controllers
         }
 
 
-        /// <summary>
-        /// TTTTTTTT
-        /// </summary>
-        /// <param name="id">The user's ID</param>
-        /// <returns></returns>
-        [AllowAnonymous]
-        [HttpPost]
-        [ProducesResponseType(StatusCodes.Status201Created)]
-        public async Task<ActionResult<GetUserDto>> CreateUser(CreateUserDto dto)
-        {
-            var newAccount = await _userService.CreateUser(dto);
-            return CreatedAtAction(nameof(GetUserById), new { id = newAccount.Id }, newAccount);
-        }
+      
 
         [HttpPatch("updatePassword")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
@@ -103,6 +91,19 @@ namespace ImmoGest.Api.Controllers
             await _userService.UpdatePassword(_session.UserId, dto);
             return NoContent();
         }
+
+
+
+        [HttpPut("{id}")]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        public async Task<ActionResult<GetUserDto>> Update(Guid id, [FromBody] UpdateUserDto dto)
+        {
+
+            var updateUser = await _userService.UpdateUser(id, dto);
+            if (updateUser == null) return NotFound();
+            return updateUser;
+        }
+
 
         [Authorize(Roles = Roles.Admin)]
         [HttpDelete("{id:guid}")]
